@@ -2,8 +2,8 @@
 //  ListVC.swift
 //  Proteins
 //
-//  Created by Adilyam TILEGENOVA on 12/12/18.
-//  Copyright © 2018 Adilyam TILEGENOVA. All rights reserved.
+//  Created by Ruslan NAUMENKO on 2/10/19.
+//  Copyright © 2019 UNIT Factory. All rights reserved.
 //
 
 import UIKit
@@ -65,11 +65,12 @@ class ListVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSceneKit" {
-            let data = sender as! ([(position: (x: Float, y: Float, z: Float), type: String)], [[Int]])
-            let destination = segue.destination as! ModelProteinsViewController
+            let data = sender as! ([(position: (x: Float, y: Float, z: Float), type: String)], [[Int]], String)
+            let destination = segue.destination as! ModelProteinsVC
             
             destination.elem = data.0
             destination.conect = data.1
+            destination.navigationItem.title = data.2
             self.removeActivityIndicator()
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
@@ -97,11 +98,14 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
         
         showActivityIndicatory()
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        apiManager.getProteinFullInfo(name: self.currentArray[indexPath.row]) { (success, elem, conect) in
+        apiManager.getProteinFullInfo(name: self.currentArray[indexPath.row]) { [unowned self] (success, elem, conect) in
             if success {
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "showSceneKit", sender: (elem, conect))
+                    let title = tableView.cellForRow(at: indexPath)?.textLabel?.text
+                    self.performSegue(withIdentifier: "showSceneKit", sender: (elem, conect, title))
                 }
+            } else {
+                self.showAlertController("Failed loading from site")
             }
         }
     }
