@@ -73,7 +73,7 @@ class ModelProteinsVC: UIViewController {
             let webVC = segue.destination as! WebVC
             
             webVC.navigationItem.title = navigationItem.title
-            webVC.url = sender as! URL
+            webVC.url = sender as? URL
         }
     }
     
