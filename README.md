@@ -1,6 +1,8 @@
 # SwiftyProteins
 Educational project of UNIT Factory (School 42).
 
+SceneKit, WebKit, Localization ...
+
 ## Download and launch
 ```text
 git clone https://github.com/rnaumenk/SwiftyProteins.git
