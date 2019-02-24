@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RB2-Lk-A0R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RB2-Lk-A0R">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -162,12 +161,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="E4E-cJ-yE3">
                         <rightBarButtonItems>
-                            <barButtonItem image="share" id="uZW-H9-vHo">
+                            <barButtonItem systemItem="action" id="uZW-H9-vHo">
                                 <connections>
                                     <action selector="shareButton:" destination="E7n-tf-XRS" id="oZF-Aw-Gbx"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="search" id="MyM-Br-SOL">
+                            <barButtonItem systemItem="search" id="MyM-Br-SOL">
                                 <connections>
                                     <action selector="learnMore:" destination="E7n-tf-XRS" id="AZs-Eo-Y27"/>
                                 </connections>
@@ -201,7 +200,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xN7-Tr-aBZ">
-                                <rect key="frame" x="177" y="423" width="20" height="20"/>
+                                <rect key="frame" x="177.66666666666666" y="423" width="20" height="20"/>
                             </activityIndicatorView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CS2-0x-XqU">
                                 <rect key="frame" x="0.0" y="88" width="375" height="44"/>
@@ -278,9 +277,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="512x512bb" width="256" height="256"/>
-        <image name="passcode" width="512" height="512"/>
-        <image name="search" width="29" height="29"/>
-        <image name="share" width="30" height="30"/>
+        <image name="512x512bb" width="512" height="512"/>
+        <image name="passcode" width="491.51998901367188" height="491.51998901367188"/>
     </resources>
 </document>
